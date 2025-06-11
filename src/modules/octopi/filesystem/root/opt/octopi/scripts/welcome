@@ -2,7 +2,7 @@
 
 _NAME=$(hostname)
 _IP=$(hostname -I)
-_OCTOPRINT_VERSION=$(/home/pi/oprint/bin/python -c "from octoprint._version import get_versions; print(get_versions()['version'])" || echo "unknown")
+_OCTOPRINT_VERSION=$(/opt/octopi/oprint/bin/python -c "from octoprint._version import get_versions; print(get_versions()['version'])" || echo "unknown")
 _OCTOPI_VERSION=$(cat /etc/octopi_version || echo "unknown")
 
 echo
@@ -34,7 +34,7 @@ then
     echo "required for running OctoPrint. If you want a desktop environment you can "
     echo "install it via"
     echo
-    echo "    sudo /home/pi/scripts/install-desktop"
+    echo "    sudo /opt/octopi/scripts/install-desktop"
 fi
 
 echo "------------------------------------------------------------------------------"
