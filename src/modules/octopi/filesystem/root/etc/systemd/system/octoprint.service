@@ -1,12 +1,13 @@
 [Unit]
 Description=The snappy web interface for your 3D printer
-After=network.online.target
-Wants=network.online.target
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Environment="HOST=127.0.0.1"
 Environment="PORT=5000"
 Environment="REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt"
+Environment="LG_WD=/tmp"
 Type=simple
 User=1000
 ExecStart=/opt/octopi/oprint/bin/octoprint serve --host=${HOST} --port=${PORT}
